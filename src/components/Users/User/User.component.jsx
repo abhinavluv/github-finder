@@ -121,7 +121,10 @@ export class User extends Component {
                             {public_gists}
                         </div>
                     </div>
-                    <Repos repos={this.props.repos} />
+                    <div className='card'>
+                        <h3 style={{ paddingTop: '20px' }}>Repositories</h3>
+                        <Repos repos={this.props.repos} />
+                    </div>
                 </React.Fragment>
             );
         }
