@@ -5,11 +5,11 @@ import GithubState from './context/github/GithubState.component';
 import AlertState from './context/alert/AlertState.component';
 
 import Navbar from './components/Layout/Navbar/Navbar.component';
-import Users from './components/Users/Users/Users.component';
-import Search from './components/Users/Search/Search.component';
 import Alert from './components/Layout/Alert/Alert.component';
 import About from './components/Pages/About/About.component';
 import User from './components/Users/User/User.component';
+import Home from './components/Pages/Home/Home.component';
+import NotFound from './components/Pages/NotFound/NotFound.component';
 
 const App = (props) => {
     return (
@@ -21,22 +21,14 @@ const App = (props) => {
                         <div className='container'>
                             <Alert alert={alert} />
                             <Switch>
-                                <Route
-                                    exact
-                                    path='/'
-                                    render={(props) => (
-                                        <React.Fragment>
-                                            <Search />
-                                            <Users />
-                                        </React.Fragment>
-                                    )}
-                                />
+                                <Route exact path='/' component={Home} />
                                 <Route exact path='/about' component={About} />
                                 <Route
                                     exact
                                     path='/user/:login'
                                     component={User}
                                 />
+                                <Route component={NotFound} />
                             </Switch>
                         </div>
                     </div>
